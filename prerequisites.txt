@@ -1,0 +1,57 @@
+OLIST ANALYTICS PROJECT - PREREQUISITES SETUP
+Google Cloud Data Analytics Certificate - Portfolio Exercise #1
+================================================================
+
+1) GOOGLE CLOUD PROJECT WITH BIGQUERY AND CLOUD STORAGE ENABLED
+-----------------------------------------------------------------
+- Go to console.cloud.google.com and sign in with the Google account you
+  want to use for this project.
+- Click the project dropdown at the top and select "New Project."
+  Name it something like: olist-portfolio-project
+- Once created and selected, go to "APIs & Services" -> "Library."
+  - Search "BigQuery API" -> Enable
+  - Search "Cloud Storage API" -> Enable (often on by default, check anyway)
+- If this is a new Google Cloud account, you may be prompted to start a
+  free trial ($300 in credits) - more than enough for this dataset's size.
+  A card is required to activate the trial, but Google will not
+  auto-charge you unless you explicitly upgrade to a paid account.
+
+2) INSTALL AND AUTHENTICATE THE GCLOUD / BQ CLI (Windows)
+-----------------------------------------------------------------
+- Download the Google Cloud CLI installer for Windows from:
+  https://cloud.google.com/sdk/docs/install
+- Run the .exe installer and accept the defaults.
+- When prompted, let it open a terminal and run "gcloud init"
+  automatically. If it doesn't, open PowerShell or the
+  "Google Cloud SDK Shell" (added to the Start menu) and run:
+
+      gcloud init
+
+  This opens a browser window - log into the same Google account from
+  step 1 and select the project you just created as the default.
+
+- Confirm everything is wired up correctly:
+
+      gcloud config list
+      bq ls
+
+  "gcloud config list" should show your project ID.
+  "bq ls" should run without an authentication error
+  (an empty result is fine - it just means no datasets exist yet).
+
+3) KAGGLE ACCOUNT
+-----------------------------------------------------------------
+- Go to kaggle.com and sign up (a Google sign-in works fine; can reuse
+  the same account as step 1, though it isn't required).
+- Search for "Brazilian E-Commerce Public Dataset by Olist" and click
+  Download.
+- No API token/setup needed for a one-time manual download.
+
+READY CHECK
+-----------------------------------------------------------------
+Before starting Step 1 of the project guide, confirm:
+  [ ] gcloud config list shows the correct project
+  [ ] bq ls runs without an authentication error
+  [ ] The Olist CSV files are downloaded from Kaggle
+
+If any step throws an error, note the exact message before troubleshooting.
